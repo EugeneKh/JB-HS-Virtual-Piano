@@ -1,0 +1,6 @@
+options:
+  formatter: stylish
+files:
+  include: '**/*.s+(a|c)ss'
+rules:
+  property-sort-order: 0

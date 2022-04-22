@@ -1,0 +1,75 @@
+$bg-color: #366141;
+$key-color: #fff;
+$d-key-color: #000;
+$key-border-color: #808080;
+$b-key-letter-color: #fff;
+
+$kb-width: 75vw;
+$kb-height: $kb-width * .5;
+$keys-number: 7;
+$border: ($kb-width * .002);
+$b-key-width: $kb-width / $keys-number / 3 * 2;
+$b-kb-width: $kb-width - ($b-key-width / 2);
+$b-kb-height: $kb-height * 2 / 3;
+
+$w-font-size: $kb-height / 9;
+$w-text-offset: $kb-height * 5 / 6 - $w-font-size / 2;
+$b-font-size: $kb-height / 12;
+$b-text-offset: $b-kb-height / 2;
+
+html {
+  height: 100%;
+}
+
+body {
+  align-items:      center;
+  background-color: $bg-color;
+  display:          flex;
+  height:           100%;
+  justify-content:  center;
+  margin:           auto;
+}
+
+.white-keys {
+  display: flex;
+  flex: 1;
+
+  kbd {
+    flex: 1;
+    background-color: $key-color;
+    border: $border solid $key-border-color;
+    font-size: $w-font-size;
+    padding-top: $w-text-offset;
+  }
+}
+
+.black-keys {
+  position: absolute;
+  z-index: 2;
+  height: $b-kb-height;
+  width: $b-kb-width;
+  margin-left: $b-key-width;
+  display: flex;
+  justify-content: space-between;
+
+  kbd,
+  div {
+    width: $b-key-width;
+    background-color: $d-key-color;
+    border: $border solid $key-border-color;
+    font-size: $b-font-size;
+    color: $b-key-letter-color;
+    padding-top: $b-text-offset;
+  }
+
+  :nth-child(4n-1) {
+    visibility: hidden;
+  }
+}
+
+.container {
+  display: flex;
+  height: $kb-height;
+  width: $kb-width;
+  text-align: center;
+}
