@@ -9,7 +9,7 @@ $kb-height: $kb-width * .5;
 $keys-number: 7;
 $border: ($kb-width * .002);
 $b-key-width: $kb-width / $keys-number / 3 * 2;
-$b-kb-width: $kb-width - ($b-key-width / 2);
+$b-kb-width: $kb-width - ($b-key-width * 2);
 $b-kb-height: $kb-height * 2 / 3;
 
 $w-font-size: $kb-height / 9;
@@ -52,8 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
 
-  kbd,
-  div {
+  kbd {
     width: $b-key-width;
     background-color: $d-key-color;
     border: $border solid $key-border-color;
@@ -62,8 +61,8 @@ body {
     padding-top: $b-text-offset;
   }
 
-  :nth-child(4n-1) {
-    visibility: hidden;
+  :nth-child(3) {
+    margin-left: $b-key-width * 1.5;
   }
 }
 
